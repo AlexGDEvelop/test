@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python tests/test_reality.py)",
+      "Bash(python -c ' *)",
+      "Bash(python -m pip install aioquic)",
+      "Bash(python tests/test_quic.py)",
+      "Bash(python -m pip install dpkt)",
+      "Bash(where winget *)",
+      "Bash(where choco *)",
+      "Read(//c/Program Files/Wireshark/**)",
+      "Bash(python -c \"import dpkt; print\\('dpkt', dpkt.__version__\\)\")",
+      "Bash(export PYTHONUTF8=1)",
+      "Bash(python tests/test_detection.py)",
+      "Bash(python tests/test_payload_identity.py)",
+      "Bash(python -m tunnel.cli --help)",
+      "Bash(python -m detect.generate --help)",
+      "WebFetch(domain:instant.news)",
+      "Bash(python -c \"import tools.socks5; import tunnel.cli; print\\('imports ok'\\)\")",
+      "Bash(python tests/test_socks_tunnel.py)"
+    ]
+  }
+}

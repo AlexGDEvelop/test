@@ -1,0 +1,9 @@
+{
+  "_comment": "Серверный конфиг для VPS. ОБЯЗАТЕЛЬНО перегенерируй ключи: python -m tunnel.cli keygen. static_private — секрет VPS (никому); его public отдаёшь клиенту в client.server_public. target=null -> динамический режим (для локального SOCKS5 на клиенте). bind 0.0.0.0 -> слушать на всех интерфейсах.",
+
+  "server": {
+    "static_private": "<ВСТАВЬ private из keygen, сгенерированного НА VPS>",
+    "bind": "0.0.0.0:5555",
+    "target": null
+  }
+}

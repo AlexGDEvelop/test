@@ -1,0 +1,24 @@
+# venv и кэш Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# РЕАЛЬНЫЕ ключи/конфиги (демо-*.example.json коммитим, эти — нет)
+config/server.vps.json
+config/bench.json
+config/*.local.json
+*.key
+*.pem
+
+# данные эксперимента (pcap, датасеты, результаты)
+data/
+*.pcap
+curve.json
+
+# мусор ОС/IDE
+.DS_Store
+Thumbs.db
+.idea/
+*.log

@@ -1,0 +1,17 @@
+{
+  "_comment": "Конфиг для браузинга через FoxyProxy (локальный SOCKS5). Сервер в ДИНАМИЧЕСКОМ режиме: target=null -> адрес сайта приходит от socks-клиента. Запуск: сервер `--role server`, локально `--role socks`. Ключи демонстрационные (loopback) — для реального стенда перегенерируйте через `python -m tunnel.cli keygen` и разнесите секции по хостам.",
+
+  "server": {
+    "static_private": "90d5322524436f86cc884e56efc9c58cd7ad120f3551db7cdc4d714b2427056a",
+    "static_public_FYI": "eec8fc134098eaeca44e6cbe789d610b3ffa263fc270cbc644c9553c63a88b01",
+    "bind": "127.0.0.1:5555",
+    "target": null
+  },
+
+  "client": {
+    "static_private": "a02d477ce94c62fed474fee5dc60ac73542b054fef4e74d1d60d868272805d6d",
+    "server_public": "eec8fc134098eaeca44e6cbe789d610b3ffa263fc270cbc644c9553c63a88b01",
+    "server_addr": "127.0.0.1:5555",
+    "local_bind": "127.0.0.1:1080"
+  }
+}

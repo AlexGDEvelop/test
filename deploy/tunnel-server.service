@@ -1,0 +1,22 @@
+[Unit]
+Description=Noise tunnel server (R&D stand)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=tunnel
+WorkingDirectory=/opt/transport-obfuscator
+ExecStart=/opt/transport-obfuscator/.venv/bin/python -m tunnel.cli run \
+    --config config/server.vps.json --role server --log-level INFO
+Restart=on-failure
+RestartSec=3
+
+# базовая изоляция процесса
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target

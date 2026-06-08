@@ -1,0 +1,17 @@
+{
+  "_comment": "Конфиг изолированного стенда (loopback). Для двух хостов разнесите server/client по машинам: серверу нужен только server.static_private; клиенту — client.static_private и client.server_public (публичный ключ сервера). Ключи здесь демонстрационные, сгенерированы локально через `python -m tunnel.cli keygen` — для реального стенда перегенерируйте.",
+
+  "server": {
+    "static_private": "90d5322524436f86cc884e56efc9c58cd7ad120f3551db7cdc4d714b2427056a",
+    "static_public_FYI": "eec8fc134098eaeca44e6cbe789d610b3ffa263fc270cbc644c9553c63a88b01",
+    "bind": "127.0.0.1:5555",
+    "target": "127.0.0.1:8888"
+  },
+
+  "client": {
+    "static_private": "a02d477ce94c62fed474fee5dc60ac73542b054fef4e74d1d60d868272805d6d",
+    "server_public": "eec8fc134098eaeca44e6cbe789d610b3ffa263fc270cbc644c9553c63a88b01",
+    "server_addr": "127.0.0.1:5555",
+    "local_bind": "127.0.0.1:1080"
+  }
+}

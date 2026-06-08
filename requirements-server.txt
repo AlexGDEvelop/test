@@ -1,0 +1,4 @@
+# Минимальные зависимости ТОЛЬКО для серверной роли (базовый Noise-туннель).
+# Не нужны aioquic/numpy/scipy/scikit-learn/dpkt — это модуль (b) и детектор.
+noiseprotocol==0.3.1
+cryptography>=42
