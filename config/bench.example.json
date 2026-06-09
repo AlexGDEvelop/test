@@ -5,7 +5,7 @@
     "static_private": "90d5322524436f86cc884e56efc9c58cd7ad120f3551db7cdc4d714b2427056a",
     "static_public_FYI": "eec8fc134098eaeca44e6cbe789d610b3ffa263fc270cbc644c9553c63a88b01",
     "bind": "127.0.0.1:5555",
-    "target": "127.0.0.1:8888"
+    "target": "null"
   },
 
   "client": {

@@ -17,7 +17,17 @@
       "Bash(python -m detect.generate --help)",
       "WebFetch(domain:instant.news)",
       "Bash(python -c \"import tools.socks5; import tunnel.cli; print\\('imports ok'\\)\")",
-      "Bash(python tests/test_socks_tunnel.py)"
+      "Bash(python tests/test_socks_tunnel.py)",
+      "Bash(python -m pytest --co -q tests/)",
+      "Bash(python tests/test_obfuscated_socks.py)",
+      "Bash(python -m pytest -q tests/)",
+      "Bash(python tests/test_field.py)",
+      "Bash(cd \"c:\\\\Users\\\\Kolotushkin.AM.PARTNER\\\\Desktop\\\\test\")",
+      "Bash(python -c \"import detect.generate; print\\('generate import ok'\\)\")",
+      "Bash(python -c \"import detect.generate, tunnel.cli; print\\('imports ok'\\)\")",
+      "Bash(python -c \"import detect.capture, detect.features; print\\('ok'\\)\")",
+      "Bash(python -c \"import detect.generate\")",
+      "Bash(python -c \"import tools.localsite; import detect.generate; print\\('imports ok'\\)\")"
     ]
   }
 }

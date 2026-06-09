@@ -7,6 +7,7 @@
 # сессия под тем же Capture; этот список — воспроизводимый прокси.
 #
 # Замени на свой репрезентативный набор. Примеры-плейсхолдеры:
-https://example.com/
-https://example.org/
-https://www.wikipedia.org/
+https://vk.com/
+https://google.com/
+https://jija.online/
+https://jija.online:2096/

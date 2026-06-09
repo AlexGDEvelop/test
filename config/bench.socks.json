@@ -10,8 +10,8 @@
 
   "client": {
     "static_private": "a02d477ce94c62fed474fee5dc60ac73542b054fef4e74d1d60d868272805d6d",
-    "server_public": "eec8fc134098eaeca44e6cbe789d610b3ffa263fc270cbc644c9553c63a88b01",
-    "server_addr": "127.0.0.1:5555",
+    "server_public": "3caccfb9910ceb6c3b11b29dd6d3cb8cf3495ed5c5ab741edc66d8565b9cc160",
+    "server_addr": "89.125.25.250:5555",
     "local_bind": "127.0.0.1:1080"
   }
 }

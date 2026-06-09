@@ -15,6 +15,7 @@ tshark в этом окружении не установлен (нужен Wire
 """
 from __future__ import annotations
 
+import os
 import shutil
 import subprocess
 import time
@@ -62,6 +63,13 @@ class Capture:
 
     def __enter__(self) -> "Capture":
         cmd = [self._exe, "-i", self._iface, "-w", self._out, "-q"]
+        # Классический pcap, НЕ pcapng (dumpcap/tshark по умолчанию пишут pcapng,
+        # а dpkt в features.py читает только классический pcap).
+        exe_name = os.path.basename(self._exe).lower()
+        if "dumpcap" in exe_name:
+            cmd += ["-P"]            # dumpcap: писать в формате pcap
+        else:
+            cmd += ["-F", "pcap"]    # tshark: формат вывода libpcap
         if self._bpf:
             cmd += ["-f", self._bpf]
         self._proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL,

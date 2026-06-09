@@ -1,0 +1,28 @@
+{
+  "_comment": "Конфиг для ОБФУСЦИРОВАННОГО транспорта. Запуск: сервер `--role server --transport reality|quic|padded`, локально `--role socks --transport <тот же>`. FoxyProxy: SOCKS5 -> client.local_bind. Блок transport: для reality/quic cert+key на сервере генерятся автоматически в указанные пути; КЛИЕНТУ нужно СКОПИРОВАТЬ server_cert (.crt) с сервера по тому же пути — клиент его пиннит (verify не отключается). Ключи демонстрационные (loopback) — перегенерируй на стенде. Для VPS: server.bind=0.0.0.0:5555, client.server_addr=<IP VPS>:5555, client.server_public=<public VPS>.",
+
+  "server": {
+    "static_private": "90d5322524436f86cc884e56efc9c58cd7ad120f3551db7cdc4d714b2427056a",
+    "bind": "127.0.0.1:5555"
+  },
+
+  "client": {
+    "static_private": "a02d477ce94c62fed474fee5dc60ac73542b054fef4e74d1d60d868272805d6d",
+    "server_public": "eec8fc134098eaeca44e6cbe789d610b3ffa263fc270cbc644c9553c63a88b01",
+    "server_addr": "127.0.0.1:5555",
+    "local_bind": "127.0.0.1:1080"
+  },
+
+  "transport": {
+    "reality": {
+      "tunnel_sni": "s3cr3t.tunnel.invalid",
+      "server_cert": "config/reality.crt",
+      "server_key": "config/reality.key"
+    },
+    "quic": {
+      "server_name": "quic.local",
+      "server_cert": "config/quic.crt",
+      "server_key": "config/quic.key"
+    }
+  }
+}

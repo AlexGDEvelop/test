@@ -54,6 +54,13 @@ def _l3_from_link(datalink: int):
 def read_packets(pcap_path: str) -> List[Packet]:
     out: List[Packet] = []
     with open(pcap_path, "rb") as fh:
+        magic = fh.read(4)
+        fh.seek(0)
+        if magic == b"\x0a\x0d\x0d\x0a":  # pcapng, dpkt его не читает
+            raise ValueError(
+                f"{pcap_path}: это pcapng, а нужен классический pcap. Снимай захват с "
+                "dumpcap -P (или tshark -F pcap) — в capture.py уже так; перекапти или "
+                "сконвертируй: editcap -F pcap in.pcap out.pcap")
         reader = dpkt.pcap.Reader(fh)
         decode = _l3_from_link(reader.datalink())
         for ts, buf in reader:

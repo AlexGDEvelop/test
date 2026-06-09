@@ -11,6 +11,9 @@ config/bench.json
 config/*.local.json
 *.key
 *.pem
+*.crt
+config/reality.*
+config/quic.*
 
 # данные эксперимента (pcap, датасеты, результаты)
 data/
