@@ -1,0 +1,57 @@
+# Negative-класс для замера: типичный браузинг в Нидерландах (то, на что маскируемся).
+# Микс по весу: новости (текст+картинки), магазины, форумы, лёгкие сервисы/погода.
+# Запуск:  ... --urls config/urls.nl.txt
+#
+# Заметки:
+# - Чем ближе к ТВОЕМУ реальному браузингу, тем честнее фон. Подмешай свои сайты.
+# - Некоторые сайты через CONNECT-прокси + HTTP/1.1 могут редиректить/отдавать
+#   мало — для ФОРМЫ трафика это ок (--max-bytes всё равно ограничивает чтение).
+# - НЕ добавляй сюда свой сервер/VPS — это не фон.
+# - google.com/youtube.com намеренно НЕ включены: флаки через прокси (HTTP/2,
+#   consent), дают 20-сек зависания. Добавь сам, если правда нужны.
+
+# --- голландские новости/медиа ---
+https://nos.nl/
+https://nu.nl/
+https://www.telegraaf.nl/
+https://www.ad.nl/
+https://www.nrc.nl/
+https://www.volkskrant.nl/
+https://www.rtlnieuws.nl/
+https://www.trouw.nl/
+
+# --- голландские магазины/сервисы ---
+https://www.bol.com/
+https://www.marktplaats.nl/
+https://www.coolblue.nl/
+https://www.ah.nl/
+https://www.jumbo.com/
+https://www.hema.nl/
+https://www.wehkamp.nl/
+
+# --- голландское: техно/форумы/развлечения ---
+https://tweakers.net/
+https://www.dumpert.nl/
+https://www.geenstijl.nl/
+
+# --- голландские утилиты/госуслуги/банки ---
+https://www.buienradar.nl/
+https://www.weeronline.nl/
+https://9292.nl/
+https://www.ns.nl/
+https://www.postnl.nl/
+https://www.funda.nl/
+https://www.ing.nl/
+https://www.rabobank.nl/
+https://www.belastingdienst.nl/
+
+# --- глобальные, популярные в NL ---
+https://en.wikipedia.org/
+https://nl.wikipedia.org/
+https://github.com/
+https://www.reddit.com/
+https://stackoverflow.com/
+https://www.bbc.com/
+https://www.mozilla.org/
+https://www.cloudflare.com/
+https://www.amazon.nl/

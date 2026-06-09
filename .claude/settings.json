@@ -27,7 +27,9 @@
       "Bash(python -c \"import detect.generate, tunnel.cli; print\\('imports ok'\\)\")",
       "Bash(python -c \"import detect.capture, detect.features; print\\('ok'\\)\")",
       "Bash(python -c \"import detect.generate\")",
-      "Bash(python -c \"import tools.localsite; import detect.generate; print\\('imports ok'\\)\")"
+      "Bash(python -c \"import tools.localsite; import detect.generate; print\\('imports ok'\\)\")",
+      "Bash(git rev-list *)",
+      "Bash(python -m pytest -q tests/test_field.py tests/test_payload_identity.py)"
     ]
   }
 }

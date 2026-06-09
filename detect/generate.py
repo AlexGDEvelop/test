@@ -98,13 +98,24 @@ class TunnelBench:
             e.stop()
 
 
+# Браузерный UA: без него многие сайты отдают 403 боту urllib (telegraaf/rabobank/…).
+_UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+       "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
+
+
+def _request(url: str) -> "urllib.request.Request":
+    return urllib.request.Request(url, headers={
+        "User-Agent": _UA, "Accept": "text/html,application/xhtml+xml,*/*;q=0.8",
+        "Accept-Language": "nl,en;q=0.8"})
+
+
 def _fetch_via_proxy(proxy_url: str, url: str, ssl_ctx: Optional[ssl.SSLContext],
                      timeout: float = 8, max_bytes: Optional[int] = None):
     handlers = [urllib.request.ProxyHandler({"http": proxy_url, "https": proxy_url})]
     if ssl_ctx is not None:
         handlers.append(urllib.request.HTTPSHandler(context=ssl_ctx))
     opener = urllib.request.build_opener(*handlers)
-    with opener.open(url, timeout=timeout) as r:
+    with opener.open(_request(url), timeout=timeout) as r:
         return r.read(max_bytes) if max_bytes else r.read()
 
 
@@ -143,7 +154,7 @@ def fetch_direct(url: str, ssl_ctx: Optional[ssl.SSLContext] = None,
     if ssl_ctx is not None:
         handlers.append(urllib.request.HTTPSHandler(context=ssl_ctx))
     opener = urllib.request.build_opener(*handlers)
-    with opener.open(url, timeout=timeout) as r:
+    with opener.open(_request(url), timeout=timeout) as r:
         return r.read(max_bytes) if max_bytes else r.read()
 
 
